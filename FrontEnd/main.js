@@ -3,7 +3,6 @@
 // 	<img src="data[X].imageUrl" alt="data[X].title">
 // 	<figcaption>data[X].title</figcaption>
 // </figure> 
-
 const createFigure = (title, imgUrl) => {
   const figure = document.createElement("figure")
 
@@ -14,10 +13,7 @@ const createFigure = (title, imgUrl) => {
   document.querySelector(".gallery").appendChild(figure)
 }
 
+// Importation des projets depuis la base de données
 fetch('http://localhost:5678/api/works')
   .then(res => res.json())
-  .then(data => {
-    for(const prop in data){
-      createFigure(data[prop].title, data[prop].imageUrl)
-    }
-  })
+  .then(data => data.forEach(element => createFigure(element.title, element.imageUrl)))
