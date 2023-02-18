@@ -1,7 +1,7 @@
 import { works } from "./works.js";
 
 {
-  /* Création d'un bloc qui contient les filtres :
+  /* Création d'un bloc pour contenir les filtres :
     <form class="filters">
 		</form>
   */
