@@ -185,9 +185,3 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-
-/* Ajout dans le CSS */
-
-.filters button {
-	background-color: #1D6154;
-}
