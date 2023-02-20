@@ -24,10 +24,16 @@ portfolio.insertBefore(form, gallery);
 const createFilter = (filterName) => {
   const filter = document.createElement("button");
   filter.textContent = filterName;
+  filter.classList.add("filter-button")
+  // Par défaut, ajouter l'apparence du filtre activé au filtre "Tous"
+  filterName === "Tous" ? filter.classList.add("filter-active") : false
   document.querySelector(".filters").appendChild(filter);
 
   filter.onclick = (event) => {
     event.preventDefault();
+
+    // Retire la classe .filter-active au filtre qui le contient
+    document.querySelector(".filter-active") ? document.querySelector(".filter-active").classList.remove("filter-active") : false
 
     works.forEach((work) => {
       const worksDOM = document.querySelectorAll(".gallery > figure");
@@ -35,6 +41,8 @@ const createFilter = (filterName) => {
       // If: Nom du filtre = Tous ou Nom de la catégorie de l'élément => Affiche l'élément
       if (filterName === "Tous" || filterName === work.category.name) {
         worksDOM[work.id - 1].style.display = "block";
+        // Ajoute la classe .filter-active
+        filter.classList.add("filter-active");
       }
       // Else : Nom du filtre != Nom de la catégorie de l'élément => Cache l'élément
       else {
