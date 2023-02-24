@@ -1,4 +1,4 @@
-import { createWork, works } from "./works.js";
+import { works } from "./works.js";
 
 {
   /* Création d'un bloc pour contenir les filtres :
@@ -26,28 +26,18 @@ const createFilter = (filterName) => {
   filter.textContent = filterName;
   filter.classList.add("filter-button");
   // Par défaut, ajouter l'apparence du filtre activé au filtre "Tous"
-  filterName === "Tous" ? filter.classList.add("filter-active") : false;
+  if (filterName === "Tous") {
+    filter.classList.add("filter-active")
+  }
   document.querySelector(".filters").appendChild(filter);
 
   filter.onclick = (event) => {
     event.preventDefault();
 
     // Retire la classe .filter-active au filtre qui le contient
-    document.querySelector(".filter-active")
-      ? document
-          .querySelector(".filter-active")
-          .classList.remove("filter-active")
-      : false;
-
-    // const worksFiltered = works.filter((work) => {
-    //   if (filterName === "Tous" || filterName === work.category.name) {
-    //     // Ajoute la classe .filter-active
-    //     filter.classList.add("filter-active");
-    //     return true
-    //   }
-    // });
-    // document.querySelector(".gallery").innerHTML = ""
-    // worksFiltered.map(work => createWork(work))
+    if (document.querySelector(".filter-active")) {
+      document.querySelector(".filter-active").classList.remove("filter-active")
+    }
 
     works.forEach((work) => {
       const worksDOM = document.querySelectorAll(".gallery > figure");

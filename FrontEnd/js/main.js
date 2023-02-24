@@ -19,3 +19,8 @@ fetch("http://localhost:5678/api/categories")
         data.forEach((element) => createFilter(element.name)))
       : false;
   });
+
+  // Afficher la navigation d'éditeur s'il y a un compte connecté
+  // if (storage.getItem("TOKEN")) {
+  // Afficher bouton de connexion
+  // }

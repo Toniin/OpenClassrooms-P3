@@ -1,0 +1,28 @@
+/* --------------------------- */
+/* 			Paramètre globaux			 */
+/* --------------------------- */
+
+body {
+  /* Permet de placer le footer en bas de page lorsque le contenu ne prend pas la totalité de la page */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+	font-family: 'Work Sans';
+
+  background-color: #fffef9;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+	color: #B1663C;
+}
+
+footer {
+  background-color: #ffffff;
+}
