@@ -1,8 +1,11 @@
 import { validForm } from "./validateLogin.js";
 
+console.log("Email: sophie.bluel@test.tld");
+console.log("Password: S0phie");
+
 const user = {
-  email: "", // sophie.bluel@test.tld
-  password: "", // S0phie
+  email: "",
+  password: "",
 };
 
 const emailInput = document.querySelector("input[type='email']");
@@ -21,6 +24,3 @@ submitInput.addEventListener("click", function (event) {
 
   validForm(user)
 });
-
-// Stocker le token pour vérifier la connexion de l'utilisateur
-// storage.setItem("TOKEN", "VALEUR TOKEN")

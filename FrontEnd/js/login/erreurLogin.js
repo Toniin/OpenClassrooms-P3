@@ -7,15 +7,15 @@
 }
 
 const displayError = () => {
-  const erreurLogin = document.createElement("p");
-  erreurLogin.classList.add("erreur-info");
+  const errorLogin = document.createElement("p");
+  errorLogin.classList.add("erreur-info");
 
-  erreurLogin.textContent = "Erreur dans l’identifiant ou le mot de passe";
+  errorLogin.textContent = "Erreur dans l’identifiant ou le mot de passe";
 
   // On place l'affichage de l'erreur de connexion au dessus du bouton de connexion
   const formLogin = document.querySelector("#login > form");
   const submitLogin = document.querySelector("input[type='submit']");
-  formLogin.insertBefore(erreurLogin, submitLogin);
+  formLogin.insertBefore(errorLogin, submitLogin);
 };
 
 export { displayError };

@@ -11,7 +11,7 @@ const validForm = (body) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    // PROBLEME si on met pas JSON.stringify(), ça ne fonctionne pas même si on met la constante user en mode JSON ?
+    // ? PROBLEME si on met pas JSON.stringify(), ça ne fonctionne pas même si on met la constante user en mode JSON ?
     body: JSON.stringify(body),
   })
     .then((res) => {
@@ -23,12 +23,18 @@ const validForm = (body) => {
     })
     .then((data) => {
       console.log(data);
-      window.location.href = "http://127.0.0.1:5500/FrontEnd/"
+      window.location.href = "http://127.0.0.1:5500/FrontEnd/";
+
+      // Stocker le token pour vérifier la connexion de l'utilisateur
+      localStorage.setItem('tokenSession', data.token);
     })
     .catch((error) => {
       console.error(error);
-      displayError();
-    });
-  }
 
-export { validForm }
+      if (!document.querySelector("p")) {
+        displayError();
+      }
+    });
+};
+
+export { validForm };

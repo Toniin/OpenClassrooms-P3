@@ -1,0 +1,21 @@
+/* ------------------------------- */
+/* 			Paramètres d'édition			 */
+/* ------------------------------- */
+
+/* ? Soucis pour mettre la barre d'édition sur tout l'écran car le body est centré ? */
+
+.editorBar {
+  display: flex;
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  /* ? Propriété heigt qui ne fonctionne pas ? */
+  min-height: 50px;
+
+  background-color: #000000;
+}
+
+header {
+  margin-top: 75px;
+}
