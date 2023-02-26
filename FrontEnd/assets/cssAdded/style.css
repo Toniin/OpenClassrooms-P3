@@ -23,6 +23,10 @@ a:hover {
 	color: #B1663C;
 }
 
+button:hover {
+  opacity: 0.9;
+}
+
 footer {
   background-color: #ffffff;
 }

@@ -2,10 +2,15 @@
 /* 			Paramètres d'édition			 */
 /* ------------------------------- */
 
-/* ? Soucis pour mettre la barre d'édition sur tout l'écran car le body est centré ? */
+header {
+  margin-top: 75px;
+}
 
+/* ? Soucis pour mettre la barre d'édition sur tout l'écran car le body est centré ? */
 .editorBar {
+  z-index: 1;
   display: flex;
+  justify-content: center;
   position: absolute;
   left: 0;
 
@@ -16,6 +21,48 @@
   background-color: #000000;
 }
 
-header {
-  margin-top: 75px;
+.editorBar-info {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+
+  font-size: 0.9em;
+
+  color: #ffffff;
+}
+
+.editorBar-button {
+  cursor: pointer;
+  margin: 5px 10px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 60px;
+
+  font-family: "Work Sans";
+  font-size: 0.9em;
+  font-weight: 700;
+
+  box-shadow: 0px 4px 14px rgba(255, 255, 255, 0.2);
+
+  background-color: #fffef9;
+  color: #000000;
+}
+
+.backgroundModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalEditor {
+  width: 50%;
+  height: 50%;
+
+  background-color: #ffffff;
 }
