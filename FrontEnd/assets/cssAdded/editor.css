@@ -2,10 +2,6 @@
 /* 			Paramètres d'édition			 */
 /* ------------------------------- */
 
-header {
-  margin-top: 75px;
-}
-
 /* ? Soucis pour mettre la barre d'édition sur tout l'écran car le body est centré ? */
 .editorBar {
   z-index: 1;

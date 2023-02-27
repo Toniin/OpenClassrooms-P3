@@ -1,5 +1,9 @@
 import { validForm } from "./validateLogin.js";
 
+{
+  /* Observe les données insérées pour lancer une vérification si l'utilisateur existe */
+}
+
 console.log("Email: sophie.bluel@test.tld");
 console.log("Password: S0phie");
 
