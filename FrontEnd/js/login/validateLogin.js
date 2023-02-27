@@ -16,7 +16,7 @@ const validForm = (body) => {
   })
     .then((res) => {
       if (!res.ok) {
-        throw new Error("Erreur dans l’identifiant ou le mot de passe");
+        throw new Error("Erreur dans l’identifiant ou le mot de passe.");
       } else {
         return res.json();
       }
@@ -26,14 +26,11 @@ const validForm = (body) => {
       window.location.href = "http://127.0.0.1:5500/FrontEnd/";
 
       // Stocker le token pour vérifier la connexion de l'utilisateur
-      localStorage.setItem('tokenSession', data.token);
+      localStorage.setItem("tokenSession", data.token);
     })
     .catch((error) => {
       console.error(error);
-
-      if (!document.querySelector("p")) {
-        displayError();
-      }
+      displayError("Erreur dans l’identifiant ou le mot de passe");
     });
 };
 

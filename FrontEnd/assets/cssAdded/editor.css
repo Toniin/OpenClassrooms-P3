@@ -57,8 +57,33 @@
 }
 
 .modalEditor {
-  width: 50%;
-  height: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
 
   background-color: #ffffff;
+}
+
+.modalDelete {
+}
+
+.modalTitle {
+  text-align: center;
+  margin: 20px;
+
+  font-size: 1.2em;
+  font-family: "Work Sans";
+}
+
+.worksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 90px;
+}
+
+.imgWorks {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
 }

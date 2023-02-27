@@ -17,8 +17,8 @@ const createWork = (work) => {
   const figure = document.createElement("figure");
   const img = document.createElement("img");
   const figcaption = document.createElement("figcaption");
-  const title = work.title;
   const url = work.imageUrl;
+  const title = work.title;
 
   img.setAttribute("src", url);
   img.setAttribute("alt", title);

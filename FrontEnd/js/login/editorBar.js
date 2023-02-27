@@ -24,6 +24,7 @@ const editorBar = () => {
   header.style.marginTop = "75px";
 
   // Afficher le l'info "mode édition" et le bouton de publication
+  // AJOUT ICONE DE FONT AWESOME
   const infoEditorMode = document.createElement("div");
   const infoEditorModeIcon = document.createElement("p");
   const infoEditorModeText = document.createElement("p");
