@@ -7,7 +7,7 @@ const logout = () => {
   // Se déconnecter quand on clique sur le bouton
   btnLogin.addEventListener("click", () => {
     localStorage.removeItem("tokenSession");
-    window.location.reload();
+    window.location.href = "http://127.0.0.1:5500/FrontEnd/login/";
   });
 };
 

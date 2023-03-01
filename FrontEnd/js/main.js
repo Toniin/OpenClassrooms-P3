@@ -2,7 +2,7 @@ import { createWork } from "./works.js";
 import { createFilter } from "./filters.js";
 import { editorBar } from "./login/editorBar.js";
 import { logout } from "./login/logout.js";
-import { modal } from "./login/modal.js";
+import { modal } from "./modal/modal.js";
 
 // Importation des projets
 fetch("http://localhost:5678/api/works")
@@ -32,6 +32,20 @@ if (tokenSession) {
 
   // Afficher la barre d'édition avant le header
   editorBar();
+
+  // Afficher un bouton pour modifier ses projets (works)
+  const btnEditWorks = document.createElement("span")
+  const btnEditWorksIcon = document.createElement("i")
+  const btnEditWorksText = document.createElement("p")
+  const worksTitle = document.querySelector("#portfolio > h2")
+
+  btnEditWorks.classList.add("btnEditWorks")
+  btnEditWorksText.textContent = "modifier"
+  btnEditWorksIcon.classList.add("fa-regular")
+  btnEditWorksIcon.classList.add("fa-pen-to-square")
+  btnEditWorks.appendChild(btnEditWorksIcon)
+  btnEditWorks.appendChild(btnEditWorksText)
+  worksTitle.appendChild(btnEditWorks)
 
   // Afficher la modale pour éditer les projets
   modal();

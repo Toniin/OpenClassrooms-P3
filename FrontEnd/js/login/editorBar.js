@@ -24,15 +24,15 @@ const editorBar = () => {
   header.style.marginTop = "75px";
 
   // Afficher le l'info "mode édition" et le bouton de publication
-  // AJOUT ICONE DE FONT AWESOME
   const infoEditorMode = document.createElement("div");
-  const infoEditorModeIcon = document.createElement("p");
+  const infoEditorModeIcon = document.createElement("i");
   const infoEditorModeText = document.createElement("p");
   const btnEditorPublish = document.createElement("button");
 
   infoEditorMode.classList.add("editorBar-info");
   btnEditorPublish.classList.add("editorBar-button");
-  infoEditorModeIcon.textContent = "ICON";
+  infoEditorModeIcon.classList.add("fa-regular")
+  infoEditorModeIcon.classList.add("fa-pen-to-square")
   infoEditorModeText.textContent = "Mode édition";
   btnEditorPublish.textContent = "publier les changements";
 
