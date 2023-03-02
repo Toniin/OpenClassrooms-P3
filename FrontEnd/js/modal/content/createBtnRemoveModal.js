@@ -8,7 +8,7 @@
   */
 }
 
-const removeModal = (backgroundModal, modalEditor) => {
+const createBtnRemoveModal = (backgroundModal, modal) => {
   // Icône pour supprimer la modale
   const modalRemove = document.createElement("button");
   const modalRemoveIcon = document.createElement("i");
@@ -17,7 +17,7 @@ const removeModal = (backgroundModal, modalEditor) => {
   modalRemoveIcon.classList.add("fa-xmark");
 
   modalRemove.appendChild(modalRemoveIcon);
-  modalEditor.appendChild(modalRemove);
+  modal.appendChild(modalRemove);
 
   // Supprime la modale lorsque l'on clique sur la croix
   modalRemove.addEventListener("click", () => {
@@ -25,5 +25,5 @@ const removeModal = (backgroundModal, modalEditor) => {
   });
 };
 
-export { removeModal };
+export { createBtnRemoveModal };
 

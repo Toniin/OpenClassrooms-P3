@@ -2,7 +2,6 @@
 /* 			Paramètres d'édition			 */
 /* ------------------------------- */
 
-/* ? Soucis pour mettre la barre d'édition sur tout l'écran car le body est centré ? */
 .editorBar {
   z-index: 1;
   display: flex;
@@ -11,8 +10,7 @@
   left: 0;
 
   width: 100%;
-  /* ? Propriété heigt qui ne fonctionne pas ? */
-  min-height: 50px;
+  height: 50px;
 
   background-color: #000000;
 }
@@ -60,9 +58,9 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modalEditor {
+.modal {
   position: relative;
-  width: 800px;
+  /* width: 800px; */
 
   border-radius: 10px;
   background-color: #ffffff;
@@ -72,28 +70,24 @@
 .modalRemove {
   cursor: pointer;
   position: absolute;
-  top: 40px;
-  right: 40px;
-  display: flex;
-  justify-content: center;
-  width: 20px;
+  top: 30px;
+  right: 30px;
   font-size: 20px;
 
   border: none;
   background: none;
 }
 
-.modalEditorContainer {
+.containerModal {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 120px;
-  /* background-color: red; */
+  margin: 30px 120px;
 }
 
 .modalTitle {
   text-align: center;
-  margin: 50px;
+  margin: 30px;
 
   font-size: 2em;
   font-family: "Work Sans";
@@ -105,18 +99,60 @@
   gap: 15px;
 }
 
-.imgWorks {
+.workInModal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.workInModal img {
   object-fit: cover;
   width: 100px;
   height: 150px;
 }
 
-.modalEditorContainer hr {
-  width: 100%;
-  margin: 50px 0;
+.workInModal:hover .btnMoveWorkInModal {
+  display: block;
 }
 
-.btnAddPicture {
+.btnMoveWorkInModal, .btnRemoveWorkInModal {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btnRemoveWorkInModal {
+  top: 5px;
+  right: 5px;
+}
+
+.btnMoveWorkInModal {
+  display: none;
+  top: 5px;
+  right: 30px;
+}
+
+.btnEditWorkInModal {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 5px;
+  padding: 0;
+  text-align: left;
+
+  font-family: "Work Sans";
+  font-size: 1rem;
+}
+
+.modalEditorContainer hr {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.btnAddPicture, .btnSubmitAddPicture {
   cursor: pointer;
   width: 50%;
   padding: 10px 0;
@@ -134,10 +170,29 @@
 
 .btnRemoveGallery {
   cursor: pointer;
-  margin-top: 30px;
+  border: none;
+  background: none;
+  margin-top: 20px;
 
   font-family: "Work Sans";
   font-size: 1.2em;
 
   color: #D65353;
+}
+
+/* PICTURE MODAL*/
+.formAddPicture {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalReturn {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 20px;
+
+  border: none;
+  background: none;
 }

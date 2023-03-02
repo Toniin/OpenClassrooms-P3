@@ -2,7 +2,7 @@ import { createWork } from "./works.js";
 import { createFilter } from "./filters.js";
 import { editorBar } from "./login/editorBar.js";
 import { logout } from "./login/logout.js";
-import { modal } from "./modal/modal.js";
+import { createModal } from "./modal/createModal.js";
 
 // Importation des projets
 fetch("http://localhost:5678/api/works")
@@ -34,19 +34,22 @@ if (tokenSession) {
   editorBar();
 
   // Afficher un bouton pour modifier ses projets (works)
-  const btnEditWorks = document.createElement("span")
-  const btnEditWorksIcon = document.createElement("i")
-  const btnEditWorksText = document.createElement("p")
-  const worksTitle = document.querySelector("#portfolio > h2")
+  const btnEditWorks = document.createElement("span");
+  const btnEditWorksIcon = document.createElement("i");
+  const btnEditWorksText = document.createElement("p");
+  const worksTitle = document.querySelector("#portfolio > h2");
 
-  btnEditWorks.classList.add("btnEditWorks")
-  btnEditWorksText.textContent = "modifier"
-  btnEditWorksIcon.classList.add("fa-regular")
-  btnEditWorksIcon.classList.add("fa-pen-to-square")
-  btnEditWorks.appendChild(btnEditWorksIcon)
-  btnEditWorks.appendChild(btnEditWorksText)
-  worksTitle.appendChild(btnEditWorks)
+  btnEditWorks.classList.add("btnEditWorks");
+  btnEditWorksText.textContent = "modifier";
+  btnEditWorksIcon.classList.add("fa-regular");
+  btnEditWorksIcon.classList.add("fa-pen-to-square");
+  btnEditWorks.appendChild(btnEditWorksIcon);
+  btnEditWorks.appendChild(btnEditWorksText);
+  worksTitle.appendChild(btnEditWorks);
 
-  // Afficher la modale pour éditer les projets
-  modal();
+  // Créer et afficher la modale pour éditer les projets lorsque l'on clique sur le bouton de modification
+  btnEditWorks.addEventListener("click", (event) => {
+    event.preventDefault();
+    createModal();
+  });
 }

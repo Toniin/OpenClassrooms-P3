@@ -21,6 +21,7 @@ const editorBar = () => {
 
   const header = document.querySelector("header");
   document.querySelector("body").insertBefore(editorBar, header);
+  // Placer le CSS dans le CSS, ajouter une classe
   header.style.marginTop = "75px";
 
   // Afficher le l'info "mode édition" et le bouton de publication
