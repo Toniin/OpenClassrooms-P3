@@ -1,3 +1,19 @@
+{
+  /* Afficher le formulaire de la modale pour ajouter une photo :
+
+    <form class="formAddPicture">
+      <input type="file" />
+      <label>Titre</label>
+      <input type="text" />
+      <label for="categories">Catégorie</label>
+      <select name="categories">
+        <option value="element.name">element.name</option>
+      </select>
+    </form>
+
+  */
+}
+
 const displayFormAddPictureModal = (worksContainer) => {
   const formAddPicture = document.createElement("form");
   formAddPicture.classList.add("formAddPicture");

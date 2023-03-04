@@ -1,8 +1,8 @@
 {
-  /* Création du titre de la modale
-      
+  /* Créer un titre pour la modale
+
     <h3 class="modalTitle"> $title </h3>
-      
+
   */
 }
 

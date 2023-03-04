@@ -2,6 +2,24 @@ import { createModalTitle } from "../createModalTitle.js";
 import { displayWorksInModal } from "./displayWorksInModal.js";
 import { displayContentAddPictureModal } from "../addPicture/displayContentAddPictureModal.js"
 
+{
+  /* Afficher le contenu de la modale galerie :
+
+    createModalTitle()
+    <div class="worksContainer">
+      displayWorksInModal()
+      <hr>
+      <button class="btnAddPicture">
+        Ajouter une photo
+      </button>
+      <button class="btnRemoveGallery">
+        Supprimer la galerie
+      </button>
+    </div>
+
+  */
+}
+
 const displayContentGalleryModal = (containerModal) => {
   // Créer un titre de la modale
   createModalTitle(containerModal, "Galerie photo");

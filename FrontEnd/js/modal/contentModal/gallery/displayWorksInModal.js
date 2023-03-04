@@ -1,7 +1,13 @@
 {
-  /* Récupérer les projets et créer un article pour chaque projet:
+  /* Récupérer les projets et créer un article pour chaque projet :
       
-    <article>
+    <article class="workInModal">
+      <img src=$work.imageUrl alt=$work.title />
+      <button class="btnMoveWorkInModal fa-solid fa-arrows-up-down-left-right"></button>
+      <button class="btnRemoveWorkInModal fa-solid fa-trash-can"></button>
+      <button class="btnEditWorkInModal">
+        éditer
+      </button>
     </article>
       
   */

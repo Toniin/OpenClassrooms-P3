@@ -1,20 +1,23 @@
 import { displayBackgroundModal } from "./displayBackgroundModal.js";
-import { createBtnRemoveModal } from "./content/createBtnRemoveModal.js";
-import { displayContentGalleryModal } from "./content/gallery/displayContentGalleryModal.js";
-// import { displayContentAddPictureModal } from "./content/addPicture/displayContentAddPictureModal.js";
+import { createBtnRemoveModal } from "./contentModal/createBtnRemoveModal.js";
+import { displayContentGalleryModal } from "./contentModal/gallery/displayContentGalleryModal.js";
 
 {
   /* Création de la modale lorsque l'on clique sur le bouton de modification :
 
-    <div class="backgroundModal">
-      <div class="modalEditor">
-		  </div>
-		</div>
+    displayBackgroundModal()
+    <div class="modal">
+        createBtnRemoveModal()
+        <div class="containerModal">
+          displayContentGalleryModal()
+	  	  </div>
+	  	</div>
 
   */
 }
 
-// Créer et afficher la modale pour éditer les projets lorsque l'on clique sur le bouton de modification
+// Créer la modale lorsque l'on clique sur le bouton de modification
+// Puis afficher la modale pour éditer les projets
 const createModal = () => {
   // Afficher l'arrère plan de la modale
   displayBackgroundModal();
@@ -34,15 +37,7 @@ const createModal = () => {
   modal.appendChild(containerModal);
 
   // Afficher le contenu de la gallerie photo
-  displayContentGalleryModal(containerModal)
-
-  // // Rediriger sur une modal pour ajouter un nouveau projet lorsque l'on clique sur le bouton d'ajout d'une photo
-  // const btnAddPicture = document.querySelector(".btnAddPicture")
-  // btnAddPicture.addEventListener("click", () => {
-  //   const containerModal = document.querySelector(".containerModal")
-  //   containerModal.innerHTML = ""
-  //   displayContentAddPictureModal(containerModal, modal)
-  // });
+  displayContentGalleryModal(containerModal);
 };
 
 export { createModal };

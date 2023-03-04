@@ -11,7 +11,6 @@ const validForm = (body) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    // ? PROBLEME si on met pas JSON.stringify(), ça ne fonctionne pas même si on met la constante user en mode JSON ?
     body: JSON.stringify(body),
   })
     .then((res) => {

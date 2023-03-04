@@ -1,5 +1,15 @@
 import { displayContentGalleryModal } from "./gallery/displayContentGalleryModal.js";
 
+{
+  /* Créer un bouton pour retourner à la modale précédente lorsque l'on clique dessus :
+
+    <button class="modalReturn">
+    <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+  */
+}
+
 const createBtnReturnModal = (modal) => {
   // Icône pour retourner à la modale précédente
   const modalReturn = document.createElement("button");

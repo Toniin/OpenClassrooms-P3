@@ -1,6 +1,6 @@
 import { createWork } from "./works.js";
 import { createFilter } from "./filters.js";
-import { editorBar } from "./login/editorBar.js";
+import { editorBar } from "./editorBar.js";
 import { logout } from "./login/logout.js";
 import { createModal } from "./modal/createModal.js";
 

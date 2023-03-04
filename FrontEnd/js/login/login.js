@@ -2,7 +2,7 @@ import { validForm } from "./validateLogin.js";
 import { displayError } from "./erreurLogin.js";
 
 {
-  /* Observe les données insérées pour lancer une vérification si l'utilisateur existe */
+  /* Observe les données insérées dans le formulaire de connexion pour lancer une vérification si l'utilisateur existe */
 }
 
 console.log("Email: sophie.bluel@test.tld");
