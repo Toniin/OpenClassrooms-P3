@@ -13,8 +13,7 @@ const createBtnRemoveWork = (workInModal, idWork) => {
 
   btnRemoveWorkInModal.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(`L'ID ${idWork} est supprimé!`);
-
+    
     fetch(`http://localhost:5678/api/works/${idWork}`, {
       method: "DELETE",
       headers: {

@@ -71,10 +71,8 @@ const AddListenerOnInputFormPictureModal = (
   });
 
   // const formulaire = document.querySelector(".formAddPicture")
-  console.log(formAddPicture);
   formAddPicture.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("Submit formualire");
 
     // Ajouter la valeur de la première catégorie par défaut
     if (!newPicture.get("category")) {

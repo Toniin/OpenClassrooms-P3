@@ -21,6 +21,16 @@ function PostValidFormPictureInDataBase(newPicture) {
       const modal = document.querySelector(".backgroundModal");
       modal.remove();
 
+      // Retour par défaut au bouton "Tous" qui est désactivé
+      const filters = document.querySelectorAll(".filters button");
+      filters.forEach((button) => {
+        if (button.textContent === "Tous") {
+          button.setAttribute("disabled", "");
+        } else {
+          button.removeAttribute("disabled");
+        }
+      });
+
       // Actualiser la liste des projets dans la galerie
       const galleryOfWorks = document.querySelector(".gallery");
       galleryOfWorks.innerHTML = "";

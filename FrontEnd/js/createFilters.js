@@ -1,4 +1,6 @@
 import { works } from "./createWorks.js";
+import { displayWorks } from "./displayWorks.js";
+import { createWork } from "./createWorks.js";
 
 {
   /* Création d'un bloc pour contenir les filtres :
@@ -23,39 +25,45 @@ portfolio.insertBefore(form, gallery);
   */
 }
 
-const createFilter = (filterName) => {
-  const filter = document.createElement("button");
-  filter.textContent = filterName;
-  filter.classList.add("filter-button");
-  // Par défaut, ajouter l'apparence du filtre activé au filtre "Tous"
-  if (filterName === "Tous") {
-    filter.classList.add("filter-active")
-  }
-  document.querySelector(".filters").appendChild(filter);
+const createFilter = (nameFilter, idFilter) => {
+  const btnFilter = document.createElement("button");
+  btnFilter.setAttribute("value", idFilter);
+  btnFilter.textContent = nameFilter;
+  btnFilter.classList.add("filter-button");
 
-  filter.onclick = (event) => {
+  // Par défaut, désactiver le filtre "Tous"
+  if (nameFilter === "Tous") {
+    btnFilter.setAttribute("disabled", "");
+  }
+
+  document.querySelector(".filters").appendChild(btnFilter);
+
+  btnFilter.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Retire la classe .filter-active au filtre qui le contient
-    if (document.querySelector(".filter-active")) {
-      document.querySelector(".filter-active").classList.remove("filter-active")
+    // Désactiver le bouton qui est cliqué
+    const filters = document.querySelectorAll(".filters button");
+    filters.forEach((button) => button.removeAttribute("disabled"));
+
+    // Supprimer tous les projets du DOM
+    const worksDOM = document.querySelectorAll(".gallery figure");
+    worksDOM.forEach((figure) => figure.remove());
+
+    // Filtrer les projets pour ne récupérer que ceux qui ont la même catégorie que le bouton cliqué
+    const worksFiltered = works.filter((work) => work.category.id == btnFilter.value);
+    // Supprimer les doublons des projets déjà filtrés
+    const removeDuplicateWorksFiltered = [...new Map(worksFiltered.map((element) => [element.title, element]))];
+
+    // Afficher tous les projets si on clique sur "Tous"
+    // Sinon afficher les projets filtrés
+    if (nameFilter === "Tous") {
+      btnFilter.setAttribute("disabled", "");
+      displayWorks();
+    } else {
+      btnFilter.setAttribute("disabled", "");
+      removeDuplicateWorksFiltered.forEach((work) => createWork(work[1]));
     }
-
-    works.forEach((work) => {
-      const worksDOM = document.querySelectorAll(".gallery > figure");
-
-      // If: Nom du filtre = Tous ou Nom de la catégorie de l'élément => Affiche l'élément
-      if (filterName === "Tous" || filterName === work.category.name) {
-        worksDOM[work.id - 1].style.display = "block";
-        // Ajoute la classe .filter-active
-        filter.classList.add("filter-active");
-      }
-      // Else : Nom du filtre != Nom de la catégorie de l'élément => Cache l'élément
-      else {
-        worksDOM[work.id - 1].style.display = "none";
-      }
-    });
-  };
+  });
 };
 
 export { createFilter };

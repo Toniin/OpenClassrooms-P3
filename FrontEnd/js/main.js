@@ -13,7 +13,7 @@ fetch("http://localhost:5678/api/categories")
   .then((data) => {
     data.length
       ? (createFilter("Tous"),
-        data.forEach((element) => createFilter(element.name)))
+        data.forEach((element) => createFilter(element.name, element.id)))
       : false;
   });
 

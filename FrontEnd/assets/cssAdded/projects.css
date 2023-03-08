@@ -24,7 +24,7 @@
   color: #1d6154;
 }
 
-.filter-active {
+.filter-button:disabled {
   background-color: #1d6154;
   color: #fffef9;
 }
