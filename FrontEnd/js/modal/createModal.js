@@ -38,6 +38,13 @@ const createModal = () => {
 
   // Afficher le contenu de la gallerie photo
   displayContentGalleryModal(containerModal);
+
+  // Supprimer la modale lorsque l'on clique en dehors de la modale
+  backgroundModal.addEventListener("click", (event) => {
+    if (event.target === backgroundModal) {
+      backgroundModal.remove()
+    }
+  });
 };
 
 export { createModal };

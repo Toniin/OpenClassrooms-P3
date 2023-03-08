@@ -1,4 +1,4 @@
-import { displayError } from "./erreurLogin.js";
+import { displayErrorForm } from "../displayErrorForm.js";
 
 {
   /* Vérifier la connexion à travers un POST vers la base de donnée pour voir si l'utilisateur existe */
@@ -22,13 +22,13 @@ const validForm = (body) => {
     })
     .then((data) => {
       window.location.href = "http://127.0.0.1:5500/FrontEnd/";
-
+      
       // Stocker le token pour vérifier la connexion de l'utilisateur
       localStorage.setItem("tokenSession", data.token);
     })
     .catch((error) => {
       console.error(error);
-      displayError("Erreur dans l’identifiant ou le mot de passe");
+      displayErrorForm("Erreur dans l’identifiant ou le mot de passe");
     });
 };
 

@@ -4,7 +4,7 @@
 
 .modal {
   position: relative;
-  /* width: 800px; */
+  max-width: 800px;
 
   border-radius: 10px;
   background-color: #ffffff;
@@ -59,13 +59,17 @@
   display: block;
 }
 
-.btnMoveWorkInModal, .btnRemoveWorkInModal {
+.btnMoveWorkInModal,
+.btnRemoveWorkInModal {
   cursor: pointer;
   position: absolute;
+  width: 25px;
+  height: 25px;
+  border: none;
   border-radius: 4px;
   padding: 4px;
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .btnRemoveWorkInModal {
@@ -76,7 +80,7 @@
 .btnMoveWorkInModal {
   display: none;
   top: 5px;
-  right: 30px;
+  right: 35px;
 }
 
 .btnEditWorkInModal {
@@ -91,14 +95,19 @@
   font-size: 1rem;
 }
 
-.modalEditorContainer hr {
+.containerModal hr {
   width: 100%;
+  background: #b3b3b3;
+  border: none;
+  padding: 1px;
   margin: 30px 0;
 }
 
-.btnAddPicture, .btnSubmitAddPicture {
+.btnAddPicture,
+.btnSubmitAddPicture {
   cursor: pointer;
   width: 50%;
+  margin: auto;
   padding: 10px 0;
   border: none;
   border-radius: 60px;
@@ -112,6 +121,11 @@
   color: #fffef9;
 }
 
+.btnSubmitAddPicture:disabled {
+  cursor: not-allowed;
+  background-color: #a7a7a7;
+}
+
 .btnRemoveGallery {
   cursor: pointer;
   border: none;
@@ -121,7 +135,7 @@
   font-family: "Work Sans";
   font-size: 1.2em;
 
-  color: #D65353;
+  color: #d65353;
 }
 
 /* PICTURE MODAL */
@@ -140,4 +154,62 @@
 
   border: none;
   background: none;
+}
+
+.containerFileInAddPicture {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 100px;
+  margin: 10px 0;
+  background-color: #e8f1f6;
+  border-radius: 3px;
+}
+
+.containerFileInAddPicture svg {
+  font-size: 5rem;
+  color: #b9c5cc;
+}
+
+.containerFileInAddPicture img {
+  max-width: 200px;
+  margin: auto;
+}
+
+.labelInputFile {
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: #cbd6dc;
+  border-radius: 60px;
+  padding: 10px 30px;
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #306685;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.09);
+}
+
+.formAddPicture input[type="file"] {
+  display: none;
+}
+
+.containerFileInAddPicture p {
+  text-align: center;
+}
+
+.formAddPicture input[type="text"] {
+  border: none;
+  background-color: #ffffff;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: 10px 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.09);
+}
+
+.formAddPicture select {
+  border: none;
+  background-color: #ffffff;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: 10px 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.09);
 }

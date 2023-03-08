@@ -1,17 +1,11 @@
-import { createWork } from "./works.js";
-import { createFilter } from "./filters.js";
+import { createFilter } from "./createFilters.js";
 import { editorBar } from "./editorBar.js";
 import { logout } from "./login/logout.js";
 import { createModal } from "./modal/createModal.js";
+import { displayWorks } from "./displayWorks.js";
 
 // Importation des projets
-fetch("http://localhost:5678/api/works")
-  .then((res) => res.json())
-  .then((data) =>
-    data.forEach((work) => {
-      createWork(work);
-    })
-  );
+displayWorks()
 
 // Importation des filtres
 fetch("http://localhost:5678/api/categories")

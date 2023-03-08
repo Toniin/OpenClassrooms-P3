@@ -1,3 +1,5 @@
+import { createBtnRemoveWork } from "./createBtnRemoveWork.js";
+
 {
   /* Récupérer les projets et créer un article pour chaque projet :
       
@@ -29,17 +31,16 @@ const displayWorksInModal = (worksContainer) => {
 
         // Bouton pour réorganiser le projet lorsque l'on se place sur l'image du projet
         const btnMoveWorkInModal = document.createElement("button");
+        const btnMoveWorkInModalIcon = document.createElement("svg");
+
         btnMoveWorkInModal.classList.add("btnMoveWorkInModal");
-        btnMoveWorkInModal.classList.add("fa-solid");
-        btnMoveWorkInModal.classList.add("fa-arrows-up-down-left-right");
+        btnMoveWorkInModalIcon.classList.add("fa-solid");
+        btnMoveWorkInModalIcon.classList.add("fa-arrows-up-down-left-right");
+        btnMoveWorkInModal.appendChild(btnMoveWorkInModalIcon);
         workInModal.appendChild(btnMoveWorkInModal);
 
         // Bouton pour supprimer le projet
-        const btnRemoveWorkInModal = document.createElement("button");
-        btnRemoveWorkInModal.classList.add("btnRemoveWorkInModal");
-        btnRemoveWorkInModal.classList.add("fa-solid");
-        btnRemoveWorkInModal.classList.add("fa-trash-can");
-        workInModal.appendChild(btnRemoveWorkInModal);
+        createBtnRemoveWork(workInModal, work.id);
 
         // Bouton pour éditer le projet
         const btnEditWorkInModal = document.createElement("button");

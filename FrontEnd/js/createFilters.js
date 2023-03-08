@@ -1,4 +1,4 @@
-import { works } from "./works.js";
+import { works } from "./createWorks.js";
 
 {
   /* Création d'un bloc pour contenir les filtres :

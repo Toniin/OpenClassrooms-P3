@@ -31,21 +31,7 @@ const displayContentAddPictureModal = (containerModal, modal) => {
   containerModal.appendChild(worksContainer);
 
   // Afficher un formulaire pour ajouter une nouvelle photo
-  displayFormAddPictureModal(worksContainer)
-
-  // Création d'une barre de séparation
-  const separationBar = document.createElement("hr");
-  containerModal.appendChild(separationBar);
-
-  // Bouton pour valider l'ajout de la photo
-  const btnSubmitAddPicture = document.createElement("button");
-  btnSubmitAddPicture.classList.add("btnSubmitAddPicture");
-  btnSubmitAddPicture.textContent = "Valider";
-  // Envoyer la nouvelle photo dans la base de donnée lorsque l'on clique sur le bouton valider
-  btnSubmitAddPicture.addEventListener("click", () => {
-    console.log("Photo validé!");
-  });
-  containerModal.appendChild(btnSubmitAddPicture);
+  displayFormAddPictureModal(worksContainer);
 };
 
 export { displayContentAddPictureModal };

@@ -11,4 +11,4 @@ const displayBackgroundModal = () => {
   }
 };
 
-export { displayBackgroundModal }
+export { displayBackgroundModal };
