@@ -21,6 +21,16 @@ const createBtnRemoveWork = (workInModal, idWork) => {
         Authorization: `Bearer ${localStorage.tokenSession}`,
       },
     }).then(() => {
+      // Retour par défaut au bouton "Tous" qui est désactivé
+      const filters = document.querySelectorAll(".filters button");
+      filters.forEach((button) => {
+        if (button.textContent === "Tous") {
+          button.setAttribute("disabled", "");
+        } else {
+          button.removeAttribute("disabled");
+        }
+      });
+
       // Actualiser la liste des projets dans la modale et dans la galerie
       const worksContainer = document.querySelector(".worksContainer");
       worksContainer.innerHTML = "";

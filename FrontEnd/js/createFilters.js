@@ -1,4 +1,4 @@
-import { works } from "./createWorks.js";
+// import { works } from "./createWorks.js";
 import { displayWorks } from "./displayWorks.js";
 import { createWork } from "./createWorks.js";
 
@@ -49,19 +49,28 @@ const createFilter = (nameFilter, idFilter) => {
     const worksDOM = document.querySelectorAll(".gallery figure");
     worksDOM.forEach((figure) => figure.remove());
 
-    // Filtrer les projets pour ne récupérer que ceux qui ont la même catégorie que le bouton cliqué
-    const worksFiltered = works.filter((work) => work.category.id == btnFilter.value);
-    // Supprimer les doublons des projets déjà filtrés
-    const removeDuplicateWorksFiltered = [...new Map(worksFiltered.map((element) => [element.title, element]))];
-
-    // Afficher tous les projets si on clique sur "Tous"
-    // Sinon afficher les projets filtrés
     if (nameFilter === "Tous") {
       btnFilter.setAttribute("disabled", "");
       displayWorks();
     } else {
-      btnFilter.setAttribute("disabled", "");
-      removeDuplicateWorksFiltered.forEach((work) => createWork(work[1]));
+      // Importation des projets pour les filtrés puis les afficher
+      fetch("http://localhost:5678/api/works")
+        .then((res) => res.json())
+        .then((data) => {
+          // Filtrer les projets pour ne récupérer que ceux qui ont la même catégorie que le bouton cliqué
+          const worksFiltered = data.filter(
+            (work) => work.category.id == btnFilter.value
+          );
+          // Supprimer les doublons des projets déjà filtrés
+          const removeDuplicateWorksFiltered = [
+            ...new Map(
+              worksFiltered.map((element) => [element.title, element])
+            ),
+          ];
+
+          btnFilter.setAttribute("disabled", "");
+          removeDuplicateWorksFiltered.forEach((work) => createWork(work[1]));
+        });
     }
   });
 };
