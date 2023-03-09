@@ -28,6 +28,7 @@ const AddListenerOnInputFormPictureModal = (
     // Si le type du fichier n'est pas "image/*"
     // Afficher un message d'erreur
     // Sinon ajouter le fichier en tant qu'image
+    // ["image/png","image/jpeg"].includes(inputFileInAddPicture.files[0].type
     console.log(inputFileInAddPicture.files[0]);
     newPicture.append("image", inputFileInAddPicture.files[0]);
 
