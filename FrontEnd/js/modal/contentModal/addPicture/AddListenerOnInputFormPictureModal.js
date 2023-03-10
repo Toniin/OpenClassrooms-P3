@@ -1,4 +1,3 @@
-import { displayErrorForm } from "../../../displayErrorForm.js";
 import { PostValidFormPictureInDataBase } from "./PostValidFormPictureInDataBase.js";
 
 const AddListenerOnInputFormPictureModal = (
@@ -23,26 +22,26 @@ const AddListenerOnInputFormPictureModal = (
       btnSubmitAddPicture.setAttribute("disabled", "");
     }
   };
+
   inputFileInAddPicture.addEventListener("change", function () {
-    // image/jpeg || image/png
-    // Si le type du fichier n'est pas "image/*"
-    // Afficher un message d'erreur
-    // Sinon ajouter le fichier en tant qu'image
-    // ["image/png","image/jpeg"].includes(inputFileInAddPicture.files[0].type
-    console.log(inputFileInAddPicture.files[0]);
-    newPicture.append("image", inputFileInAddPicture.files[0]);
-
     if (this.value) {
-      File = true;
+      // Vérification du type de fichier pour ne pas prendre les fichiers autres que PNG/JPEG
+      if (["image/png", "image/jpeg"].includes(inputFileInAddPicture.files[0].type)) {
+        newPicture.append("image", inputFileInAddPicture.files[0]);
 
-      // AJOUTER L'IMAGE CHOISIE DANS LE DOM
-      const containerFileInAddPicture = document.querySelector(".containerFileInAddPicture");
-      containerFileInAddPicture.innerHTML = "";
-      const image = document.createElement("img");
-      image.setAttribute("src", URL.createObjectURL(inputFileInAddPicture.files[0]));
-      containerFileInAddPicture.appendChild(image);
+        File = true;
 
-      enableBtnSubmit(File, Title);
+        // AJOUTER L'IMAGE CHOISIE DANS LE DOM
+        const containerFileInAddPicture = document.querySelector(".containerFileInAddPicture");
+        containerFileInAddPicture.innerHTML = "";
+        const image = document.createElement("img");
+        image.setAttribute("src", URL.createObjectURL(inputFileInAddPicture.files[0]));
+        containerFileInAddPicture.appendChild(image);
+
+        enableBtnSubmit(File, Title);
+      } else {
+        alert("Insérer un fichier image PNG ou JPEG");
+      }
     } else {
       File = false;
       enableBtnSubmit(File, Title);

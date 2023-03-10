@@ -1,5 +1,3 @@
-import { displayErrorForm } from "../displayErrorForm.js";
-
 {
   /* Vérifier la connexion à travers un POST vers la base de donnée pour voir si l'utilisateur existe */
 }
@@ -28,7 +26,7 @@ const validForm = (body) => {
     })
     .catch((error) => {
       console.error(error);
-      displayErrorForm("Erreur dans l’identifiant ou le mot de passe");
+      alert("Erreur dans l’identifiant ou le mot de passe");
     });
 };
 

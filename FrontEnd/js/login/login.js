@@ -1,5 +1,4 @@
 import { validForm } from "./validateLogin.js";
-import { displayErrorForm } from "../displayErrorForm.js";
 
 {
   /* Observe les données insérées dans le formulaire de connexion pour lancer une vérification si l'utilisateur existe */
@@ -30,11 +29,11 @@ submitInput.addEventListener("click", function (event) {
   // Si au moins un des champs est vide, on affiche une erreur 
   if (user.email === "" || user.password === "") {
     if (user.email === "" && user.password === "") {
-      displayErrorForm("L'identifiant et mot de passe sont requis.");
+      alert("L'identifiant et mot de passe sont requis.");
     } else if (user.email === "") {
-      displayErrorForm("L'identifiant est requis.");
+      alert("L'identifiant est requis.");
     } else if (user.password === "") {
-      displayErrorForm("Le mot de passe est requis.");
+      alert("Le mot de passe est requis.");
     }
   } 
   // Sinon on lance la vérification du formulaire
