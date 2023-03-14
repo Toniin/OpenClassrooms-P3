@@ -62,14 +62,14 @@ const createFilter = (nameFilter, idFilter) => {
             (work) => work.category.id == btnFilter.value
           );
           // Supprimer les doublons des projets déjà filtrés
-          const removeDuplicateWorksFiltered = [
+          const worksFilteredWithoutDuplicata = [
             ...new Map(
               worksFiltered.map((element) => [element.title, element])
             ),
           ];
 
           btnFilter.setAttribute("disabled", "");
-          removeDuplicateWorksFiltered.forEach((work) => createWork(work[1]));
+          worksFilteredWithoutDuplicata.forEach((work) => createWork(work[1]));
         });
     }
   });

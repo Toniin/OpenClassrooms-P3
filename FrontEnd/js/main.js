@@ -11,10 +11,10 @@ displayWorks()
 fetch("http://localhost:5678/api/categories")
   .then((res) => res.json())
   .then((data) => {
-    data.length
-      ? (createFilter("Tous"),
-        data.forEach((element) => createFilter(element.name, element.id)))
-      : false;
+    if (data.length > 0) {
+      createFilter("Tous")
+      data.forEach((element) => createFilter(element.name, element.id))
+    }
   });
 
 // Ajouter des fonctions supplémentaires lorsque l'utilisateur est connecté

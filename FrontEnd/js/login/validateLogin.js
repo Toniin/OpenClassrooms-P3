@@ -2,14 +2,14 @@
   /* Vérifier la connexion à travers un POST vers la base de donnée pour voir si l'utilisateur existe */
 }
 
-const validForm = (body) => {
+const validForm = (user) => {
   fetch("http://localhost:5678/api/users/login", {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(user),
   })
     .then((res) => {
       if (!res.ok) {
