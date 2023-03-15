@@ -35,7 +35,7 @@ submitInput.addEventListener("click", function (event) {
     } else if (user.password === "") {
       alert("Le mot de passe est requis.");
     }
-  } 
+  }
   // Sinon on lance la vérification du formulaire
   else {
     validForm(user);

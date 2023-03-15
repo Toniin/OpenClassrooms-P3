@@ -20,7 +20,7 @@ const validForm = (user) => {
     })
     .then((data) => {
       window.location.href = "http://127.0.0.1:5500/FrontEnd/";
-      
+
       // Stocker le token pour vérifier la connexion de l'utilisateur
       localStorage.setItem("tokenSession", data.token);
     })
