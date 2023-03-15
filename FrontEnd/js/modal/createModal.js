@@ -7,11 +7,11 @@ import { displayContentGalleryModal } from "./contentModal/gallery/displayConten
 
     displayBackgroundModal()
     <div class="modal">
-        createBtnRemoveModal()
-        <div class="containerModal">
-          displayContentGalleryModal()
-	  	  </div>
-	  	</div>
+      createBtnRemoveModal()
+      <div class="containerModal">
+        displayContentGalleryModal()
+	    </div>
+	  </div>
 
   */
 }
